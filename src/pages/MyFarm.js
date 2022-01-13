@@ -38,7 +38,9 @@ export default function MyFarm() {
         geee: 0,
         duck: 0,
         chae: 0,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000001,
@@ -51,7 +53,9 @@ export default function MyFarm() {
         geee: 40,
         duck: 20,
         chae: 70,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000002,
@@ -64,7 +68,9 @@ export default function MyFarm() {
         geee: 20,
         duck: 80,
         chae: 120,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000003,
@@ -77,7 +83,9 @@ export default function MyFarm() {
         geee: 50,
         duck: 30,
         chae: 50,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000004,
@@ -90,7 +98,9 @@ export default function MyFarm() {
         geee: 0,
         duck: 0,
         chae: 0,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000005,
@@ -103,7 +113,9 @@ export default function MyFarm() {
         geee: 40,
         duck: 20,
         chae: 70,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000006,
@@ -116,7 +128,9 @@ export default function MyFarm() {
         geee: 20,
         duck: 80,
         chae: 120,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000007,
@@ -129,7 +143,9 @@ export default function MyFarm() {
         geee: 50,
         duck: 30,
         chae: 50,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000008,
@@ -142,7 +158,9 @@ export default function MyFarm() {
         geee: 0,
         duck: 0,
         chae: 0,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000009,
@@ -155,7 +173,9 @@ export default function MyFarm() {
         geee: 40,
         duck: 20,
         chae: 70,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000010,
@@ -168,7 +188,9 @@ export default function MyFarm() {
         geee: 20,
         duck: 80,
         chae: 120,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
       {
         id: 1000000011,
@@ -181,7 +203,9 @@ export default function MyFarm() {
         geee: 50,
         duck: 30,
         chae: 50,
-        isCarbonCompound: false
+        isAbandoned: false,
+        X: 0,
+        Y: 0
       },
     ]);
 
@@ -316,7 +340,7 @@ export default function MyFarm() {
           else {
             return e;
           }
-        }))
+        }));
 
         setContentType(CONTENT_ITEM);
         setUseItemId(-1);
@@ -349,17 +373,18 @@ export default function MyFarm() {
   const makeListContent = (contentType) => {
     switch (contentType) {
       case CONTENT_ANIMAL :
-        return animalList.map(animal => <ListItem key={animal.id}>
-          <AnimalListItem 
-            onClick={onAnimalItemClick}
-            id={animal.id}
-            name={animal.name}
-            type={animal.type}
-            sex={animal.sex}
-            geee={animal.geee}
-            duck={animal.duck}
-            chae={animal.chae} />
-        </ListItem>);
+        return animalList.map(animal => 
+          <ListItem key={animal.id}>
+            <AnimalListItem 
+              onClick={onAnimalItemClick}
+              id={animal.id}
+              name={animal.name}
+              type={animal.type}
+              sex={animal.sex}
+              geee={animal.geee}
+              duck={animal.duck}
+              chae={animal.chae} />
+          </ListItem>);
     
       case CONTENT_ITEM :
         return itemList.map(item => <ListItem key={item.id}>
